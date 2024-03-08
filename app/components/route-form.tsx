@@ -51,34 +51,28 @@ const RouteForm: React.FC = () => {
       style={{ maxWidth: 600 }}
     >
       <Form.Item name="type" label="Tipo de ruta" rules={[{ required: true }]}>
-        <Select placeholder="Seleciona un tipo de ruta" allowClear>
-          {typeOfTravel.map((type) => (
-            <Option key={type.value} value={type.value}>
-              {type.name}
-            </Option>
-          ))}
-        </Select>
+        <Input />
       </Form.Item>
       <Form.Item
         name="name"
         label="Nombre de la ruta"
         rules={[{ required: true }]}
       >
-        <Input />
+        <Input maxLength={50} />
       </Form.Item>
       <Form.Item
         name="origin"
         label="Origen de la ruta"
         rules={[{ required: true }]}
       >
-        <Input type="url" />
+        <Input maxLength={50} />
       </Form.Item>
       <Form.Item
         name="destiny"
         label="Destino de la ruta"
         rules={[{ required: true }]}
       >
-        <Input type="url" />
+        <Input maxLength={50} />
       </Form.Item>
 
       <Form.Item {...tailLayout}>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Switch } from "antd";
 
 type SiwthComponentProps = {
@@ -16,11 +16,20 @@ const SwitchComponent = ({
   idDoc,
   doc,
 }: SiwthComponentProps) => {
+  const [value, SetValue] = useState(record);
+
   const handleChange = (checked: boolean) => {
     onChange(idDoc, doc, checked);
-    console.log("SwitchComponent:handleChange", checked);
+    SetValue(!value);
   };
-  return <Switch defaultChecked onChange={handleChange} value={record} />;
+  return (
+    <Switch
+      defaultChecked
+      onChange={handleChange}
+      defaultValue={record}
+      value={value}
+    />
+  );
 };
 
 export default SwitchComponent;

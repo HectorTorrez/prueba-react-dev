@@ -9,12 +9,6 @@ import { deleteDocument } from "../helpers/delete";
 
 export const columns: TableProps<DataType>["columns"] = [
   {
-    title: "Estado de Ruta",
-    dataIndex: "state",
-    key: "state",
-    render: (state) => (state ? "Activo" : "Inactivo"),
-  },
-  {
     title: "Tipo de viaje",
     dataIndex: "type",
     key: "type",
@@ -49,6 +43,12 @@ export const columns: TableProps<DataType>["columns"] = [
     ),
   },
   {
+    title: "Estado de Ruta",
+    dataIndex: "state",
+    key: "state",
+    render: (state) => (state ? "Activo" : "Inactivo"),
+  },
+  {
     title: "Opciones",
     key: "opciones",
     render: (_, record) => (
@@ -59,7 +59,7 @@ export const columns: TableProps<DataType>["columns"] = [
         <DeleteButton
           cancelMessage="No se ha eliminado"
           confirmMessage="Se ha eliminado"
-          onDelete={() => deleteDocument("ruta", record.idDoc)}
+          onDelete={() => deleteDocument("rutas", record.idDoc)}
           title="¿Quieres eliminar esta ruta?"
           description="¿Está seguro que desea eliminar esta ruta?"
         />
