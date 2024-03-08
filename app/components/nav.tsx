@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Anchor } from "antd";
+import { navRoutes } from "../contants/navRoutes";
 
 const Navbar = () => {
   const onChange = (link: string) => {
@@ -11,13 +12,7 @@ const Navbar = () => {
     <Anchor
       affix={false}
       onChange={onChange}
-      items={[
-        {
-          key: "1",
-          href: "/",
-          title: "Basic demo",
-        },
-      ]}
+      items={navRoutes}
       direction="horizontal"
       style={{ display: "flex", justifyContent: "end" }}
     />
