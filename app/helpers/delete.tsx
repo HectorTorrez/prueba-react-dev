@@ -4,5 +4,5 @@ import { db } from "../firebase/firebase";
 
 export async function deleteDocument(col: string, id: string) {
   await deleteDoc(doc(db, col, id));
-  location.reload();
+  await location.reload();
 }

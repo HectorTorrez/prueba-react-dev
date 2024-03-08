@@ -9,6 +9,8 @@ type DeleteButtonProps = {
   onDelete: () => void;
   confirmMessage: string;
   cancelMessage: string;
+  buttonText: string | React.ReactNode;
+  buttonType: "primary" | "default" | "dashed" | "link" | "text";
 };
 
 const DeleteButton = ({
@@ -17,6 +19,8 @@ const DeleteButton = ({
   onDelete,
   confirmMessage,
   cancelMessage,
+  buttonText,
+  buttonType,
 }: DeleteButtonProps) => {
   const confirm = (e: React.MouseEvent<HTMLElement> | undefined) => {
     onDelete();
@@ -36,7 +40,9 @@ const DeleteButton = ({
       okText="Si"
       cancelText="No"
     >
-      <Button danger>Delete</Button>
+      <Button type={buttonType} danger>
+        {buttonText}
+      </Button>
     </Popconfirm>
   );
 };

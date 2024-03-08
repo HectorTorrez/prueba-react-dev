@@ -1,3 +1,4 @@
+"use client";
 import { Space, TableProps } from "antd";
 import SwitchComponent from "../components/switch";
 import { DataType, RouteFromFirebase } from "../types/routes";
@@ -6,6 +7,9 @@ import ModalComponent from "../components/modal";
 import EditForm from "../components/edit-form";
 import DeleteButton from "../components/delete-button";
 import { deleteDocument } from "../helpers/delete";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import TableComponent from "../components/table";
+import { viewColumns } from "./viewRouteColumns";
 
 export const columns: TableProps<DataType>["columns"] = [
   {
@@ -51,18 +55,38 @@ export const columns: TableProps<DataType>["columns"] = [
   {
     title: "Opciones",
     key: "opciones",
-    render: (_, record) => (
+    render: (record) => (
       <Space size="middle">
-        <ModalComponent text="Editar" title="Editar ruta">
+        <ModalComponent
+          buttonType="link"
+          text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
+          title="Editar ruta"
+        >
           <EditForm value={record as RouteFromFirebase} />
         </ModalComponent>
         <DeleteButton
+          buttonType="link"
+          buttonText={
+            <DeleteOutlined style={{ fontSize: 20, display: "block" }} />
+          }
           cancelMessage="No se ha eliminado"
           confirmMessage="Se ha eliminado"
           onDelete={() => deleteDocument("rutas", record.idDoc)}
           title="¿Quieres eliminar esta ruta?"
           description="¿Está seguro que desea eliminar esta ruta?"
         />
+        <ModalComponent
+          width="60%"
+          buttonType="primary"
+          text="Ver más"
+          title="Ruta"
+        >
+          <TableComponent
+            pagination={false}
+            columns={viewColumns}
+            data={[record]}
+          />
+        </ModalComponent>
       </Space>
     ),
   },

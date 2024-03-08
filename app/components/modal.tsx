@@ -7,10 +7,14 @@ const ModalComponent = ({
   children,
   text,
   title,
+  buttonType,
+  width,
 }: {
   children: React.ReactNode;
-  text: string;
-  title: string;
+  text: string | React.ReactNode;
+  title: string | React.ReactNode;
+  buttonType?: "primary" | "default" | "dashed" | "link" | "text";
+  width?: number | string;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
@@ -24,13 +28,14 @@ const ModalComponent = ({
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button type={buttonType} onClick={showModal}>
         {text}
       </Button>
       <Modal
         title={title}
         open={isModalOpen}
         onCancel={handleCancel}
+        width={width}
         footer={[
           <Button key="back" onClick={handleCancel}>
             Cancelar
