@@ -4,10 +4,11 @@ import { Table } from "antd";
 
 import { DataType } from "../types/routes";
 import { TableProps } from "antd/lib";
+import { DriverTypesFromFirebase } from "../types/drivers";
 
 type TableComponentProps = {
-  data: DataType[];
-  columns: TableProps<DataType>["columns"];
+  data: DataType[] | DriverTypesFromFirebase[];
+  columns: TableProps<DataType | DriverTypesFromFirebase>["columns"];
   pagination: false | object | undefined;
 };
 
