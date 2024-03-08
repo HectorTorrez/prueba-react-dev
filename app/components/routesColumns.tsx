@@ -62,6 +62,8 @@ export const columns: TableProps<DataType>["columns"] = [
           buttonType="link"
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
           title="Editar ruta"
+          width="auto"
+          buttonWidth="100px"
         >
           <EditForm value={record as RouteFromFirebase} />
         </ModalComponent>
@@ -77,10 +79,11 @@ export const columns: TableProps<DataType>["columns"] = [
           description="¿Está seguro que desea eliminar esta ruta?"
         />
         <ModalComponent
-          width="60%"
+          buttonWidth="100px"
           buttonType="primary"
           text="Ver más"
           title="Ruta"
+          width="auto"
         >
           <TableComponent
             pagination={false}

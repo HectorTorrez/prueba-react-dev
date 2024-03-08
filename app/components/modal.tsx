@@ -10,12 +10,14 @@ const ModalComponent = ({
   title,
   buttonType,
   width,
+  buttonWidth,
 }: {
   children: React.ReactNode;
   text: string | React.ReactNode;
   title: string | React.ReactNode;
   buttonType?: "primary" | "default" | "dashed" | "link" | "text";
-  width?: number | string;
+  buttonWidth: string;
+  width: string;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
@@ -29,7 +31,11 @@ const ModalComponent = ({
 
   return (
     <>
-      <Button type={buttonType} onClick={showModal}>
+      <Button
+        style={{ width: buttonWidth }}
+        type={buttonType}
+        onClick={showModal}
+      >
         {text}
       </Button>
       <Modal

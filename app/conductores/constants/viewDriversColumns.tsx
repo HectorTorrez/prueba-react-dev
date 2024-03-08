@@ -30,6 +30,21 @@ export const viewDriversColumns: TableProps<DriverTypesFromFirebase>["columns"] 
       key: "age",
     },
     {
+      title: "Licencia",
+      key: "licence",
+      dataIndex: "licence",
+    },
+    {
+      title: "Correo",
+      key: "email",
+      dataIndex: "email",
+    },
+    {
+      title: "Teléfono",
+      key: "phone",
+      dataIndex: "phone",
+    },
+    {
       title: "Dirección",
       key: "address",
       dataIndex: "address",

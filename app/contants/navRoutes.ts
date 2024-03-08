@@ -9,4 +9,9 @@ export const navRoutes = [
     href: "/conductores",
     title: "Conductores",
   },
+  {
+    key: "3",
+    href: "/vehiculos",
+    title: "Vehiculos",
+  },
 ];

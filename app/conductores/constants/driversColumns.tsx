@@ -62,6 +62,8 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
       <Space size="middle">
         {/* modal para editar conductor el cual el hijo recibe los valores */}
         <ModalComponent
+          width="auto"
+          buttonWidth="100px"
           buttonType="link"
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
           title="Editar conductor"
@@ -82,10 +84,11 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
 
         {/* modal para ver mas informacion de los conductores */}
         <ModalComponent
-          width="60%"
+          width="90%"
           buttonType="primary"
           text="Ver más"
           title="Conductores"
+          buttonWidth="100px"
         >
           <TableComponent
             pagination={false}

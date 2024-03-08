@@ -3,6 +3,10 @@ import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
 import { getData } from "./api/route";
 import { columns } from "./components/routesColumns";
+import { Flex } from "antd";
+import SectionLayout from "./components/section-layout";
+import { BUTTONS_ADD_WIDTH } from "./contants/styles";
+import Title from "antd/es/typography/Title";
 
 export const fetchCache = "force-no-store";
 export const revalidate = 0;
@@ -14,23 +18,26 @@ export default async function Home() {
 
   return (
     <section>
-      <p>Rutas</p>
-      <section>
-        <section>
-          <ModalComponent
-            buttonType="primary"
-            text="Crea una nueva ruta"
-            title="Agrega una nueva ruta"
-          >
-            <RouteForm />
-          </ModalComponent>
-        </section>
+      <Title level={2} style={{ marginTop: "10px" }}>
+        Rutas
+      </Title>
+      <SectionLayout>
+        <ModalComponent
+          buttonType="primary"
+          text="Crea una nueva ruta"
+          title="Agrega una nueva ruta"
+          buttonWidth={BUTTONS_ADD_WIDTH}
+          width="auto"
+        >
+          <RouteForm />
+        </ModalComponent>
+
         <TableComponent
           pagination={undefined}
           columns={columns as any}
           data={routesData}
         />
-      </section>
+      </SectionLayout>
     </section>
   );
 }

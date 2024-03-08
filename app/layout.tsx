@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={inter.className}
-        style={{ maxWidth: "1000px", margin: "auto" }}
+        style={{ maxWidth: "80%", margin: "auto" }}
       >
         <AntdRegistry>
           <ConfigProvider locale={esES}>
