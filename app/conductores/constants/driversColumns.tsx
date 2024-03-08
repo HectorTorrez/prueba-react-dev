@@ -3,7 +3,6 @@ import { Space } from "antd";
 import SwitchComponent from "../../components/switch";
 import ModalComponent from "../../components/modal";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import EditForm from "../../components/edit-routes-form";
 import DeleteButton from "../../components/delete-button";
 import { DriverTypesFromFirebase } from "../../types/drivers";
 import { deleteDocument } from "../../helpers/delete";
@@ -14,6 +13,7 @@ import EditDriversForm from "../components/edit";
 import TableComponent from "@/app/components/table";
 import { viewDriversColumns } from "./viewDriversColumns";
 
+// columnas de la tabla de conductores
 export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
   {
     title: "Nombre",
@@ -60,6 +60,7 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
     key: "opciones",
     render: (record) => (
       <Space size="middle">
+        {/* modal para editar conductor el cual el hijo recibe los valores */}
         <ModalComponent
           buttonType="link"
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
@@ -78,6 +79,8 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
           title="¿Quieres eliminar este conductor?"
           description="¿Está seguro que desea eliminar este conductor?"
         />
+
+        {/* modal para ver mas informacion de los conductores */}
         <ModalComponent
           width="60%"
           buttonType="primary"

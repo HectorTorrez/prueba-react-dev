@@ -1,16 +1,17 @@
 "use client";
 import { Space, TableProps } from "antd";
-import SwitchComponent from "../components/switch";
+import SwitchComponent from "./switch";
 import { DataType, RouteFromFirebase } from "../types/routes";
 import { getState } from "../helpers/getState";
-import ModalComponent from "../components/modal";
-import EditForm from "../components/edit-routes-form";
-import DeleteButton from "../components/delete-button";
+import ModalComponent from "./modal";
+import EditForm from "./edit-routes-form";
+import DeleteButton from "./delete-button";
 import { deleteDocument } from "../helpers/delete";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import TableComponent from "../components/table";
-import { viewColumns } from "./viewRouteColumns";
+import TableComponent from "./table";
+import { viewColumns } from "../contants/viewRouteColumns";
 
+// columnas de la tabla de rutas
 export const columns: TableProps<DataType>["columns"] = [
   {
     title: "Tipo de viaje",
@@ -83,7 +84,7 @@ export const columns: TableProps<DataType>["columns"] = [
         >
           <TableComponent
             pagination={false}
-            columns={viewColumns}
+            columns={viewColumns as any}
             data={[record]}
           />
         </ModalComponent>

@@ -4,7 +4,6 @@ import { Button, Form, Input, Select, Space, message } from "antd";
 import { RouteFromFirebase } from "../types/routes";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { useRouter } from "next/navigation";
 import { typeOfTravel } from "../contants/typeOfTravel";
 
 const { Option } = Select;
@@ -18,6 +17,7 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
+// Formulario para editar rutas
 const EditForm = ({ value }: { value: RouteFromFirebase }) => {
   const [form] = Form.useForm();
 

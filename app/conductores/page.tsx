@@ -20,7 +20,11 @@ export default async function DriversPage() {
             <DriverForm />
           </ModalComponent>
         </section>
-        <TableComponent data={driversData} columns={driverColumns} />
+        <TableComponent
+          pagination={undefined}
+          data={driversData}
+          columns={driverColumns as any}
+        />
       </section>
     </section>
   );

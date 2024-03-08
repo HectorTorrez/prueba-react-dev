@@ -31,6 +31,8 @@ const StyledUpload = styled(Upload)`
   }
 `;
 
+// componente para subir imagenes
+
 export default function UploadImageComponent({
   setAvatar,
   avatar,
@@ -47,7 +49,7 @@ export default function UploadImageComponent({
       return;
     }
     if (info.file.status === "done") {
-      // Get this url from response in real world.
+      // Optienes la url de la imagen
       getBase64(info.file.originFileObj as FileType, (url) => {
         setLoading(false);
         setImageUrl(url);

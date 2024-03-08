@@ -2,7 +2,7 @@ import TableComponent from "./components/table";
 import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
 import { getData } from "./api/route";
-import { columns } from "./contants/routesColumns";
+import { columns } from "./components/routesColumns";
 
 export const fetchCache = "force-no-store";
 export const revalidate = 0;
@@ -27,7 +27,7 @@ export default async function Home() {
         </section>
         <TableComponent
           pagination={undefined}
-          columns={columns}
+          columns={columns as any}
           data={routesData}
         />
       </section>

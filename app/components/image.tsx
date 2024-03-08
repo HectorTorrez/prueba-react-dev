@@ -8,6 +8,7 @@ type ImageComponentProps = {
   height: number;
 };
 
+// componente de imagen reutilizable
 const ImageComponent = ({ url, alt, width, height }: ImageComponentProps) => (
   <Image alt={url + alt} width={width} src={url} height={height} />
 );

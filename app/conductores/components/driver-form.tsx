@@ -17,6 +17,8 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
+//formulario para agregar conductores
+
 const DriverForm = () => {
   const [avatar, setAvatar] = useState<string>("");
   const [form] = Form.useForm();
@@ -28,6 +30,7 @@ const DriverForm = () => {
     }
 
     try {
+      // despues de evaluar que la imagen no este vacia se agrega el conductor a la base de datos
       await addDoc(collection(db, "conductores"), {
         id: crypto.randomUUID(),
         state: true,

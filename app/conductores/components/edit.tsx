@@ -27,6 +27,7 @@ const EditDriversForm = ({ value }: { value: DriverTypesFromFirebase }) => {
   const onFinish = async () => {
     const ruta = doc(db, "conductores", value.idDoc);
     try {
+      // se envian los datos editados a la base de datos en firebase
       await updateDoc(ruta, {
         imageUrl: form.getFieldValue("imageUrl"),
         name: form.getFieldValue("name"),

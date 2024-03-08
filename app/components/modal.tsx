@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import { useRouter } from "next/navigation";
 
+// modal reutilizable
 const ModalComponent = ({
   children,
   text,

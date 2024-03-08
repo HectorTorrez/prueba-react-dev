@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Button, message, Popconfirm } from "antd";
-import { on } from "events";
 
 type DeleteButtonProps = {
   title: string;
@@ -13,6 +12,7 @@ type DeleteButtonProps = {
   buttonType: "primary" | "default" | "dashed" | "link" | "text";
 };
 
+// componente button reutilizable para eliminar
 const DeleteButton = ({
   title,
   description,

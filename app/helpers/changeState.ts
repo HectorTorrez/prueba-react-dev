@@ -2,6 +2,8 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { message } from "antd";
 
+// Esta funcion cambia el estado de un documento en la base de datos
+
 export async function changeState(
   idDoc: string,
   document: string,

@@ -12,6 +12,8 @@ type TableComponentProps = {
   pagination: false | object | undefined;
 };
 
+// componente de tabla reutilizable
+
 const TableComponent = ({ data, columns, pagination }: TableComponentProps) => {
   return <Table columns={columns} dataSource={data} pagination={pagination} />;
 };

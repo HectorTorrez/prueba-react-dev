@@ -3,9 +3,6 @@ import React from "react";
 import { Button, Form, Input, Select, Space, message } from "antd";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { typeOfTravel } from "../contants/typeOfTravel";
-
-const { Option } = Select;
 
 const layout = {
   labelCol: { span: 8 },
@@ -16,6 +13,7 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
+// Formulario para agregar rutas
 const RouteForm: React.FC = () => {
   const [form] = Form.useForm();
 

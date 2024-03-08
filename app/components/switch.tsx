@@ -19,6 +19,7 @@ const SwitchComponent = ({
   const [value, SetValue] = useState(record);
 
   const handleChange = (checked: boolean) => {
+    // recibe una funcion helper para poder cambiar el estado de la ruta
     onChange(idDoc, doc, checked);
     SetValue(!value);
   };

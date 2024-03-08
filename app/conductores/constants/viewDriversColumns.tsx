@@ -1,8 +1,9 @@
 "use client";
 import { TableProps } from "antd";
-import { DriverTypes, DriverTypesFromFirebase } from "@/app/types/drivers";
+import { DriverTypesFromFirebase } from "@/app/types/drivers";
 import ImageComponent from "@/app/components/image";
 
+// columnas de la tabla de conductores al hacer click en ver mas
 export const viewDriversColumns: TableProps<DriverTypesFromFirebase>["columns"] =
   [
     {

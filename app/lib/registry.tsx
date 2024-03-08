@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 import { ServerStyleSheet, StyleSheetManager } from "styled-components";
 
+// lib para manejar los estilos de styled-components
+
 export default function StyledComponentsRegistry({
   children,
 }: {
