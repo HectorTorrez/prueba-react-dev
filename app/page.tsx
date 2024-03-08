@@ -2,6 +2,7 @@ import TableComponent from "./components/table";
 import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
 import { getData } from "./api/route";
+import { columns } from "./contants/routesColumns";
 
 export const fetchCache = "force-no-store";
 export const revalidate = 0;
@@ -17,13 +18,18 @@ export default async function Home() {
       <section>
         <section>
           <ModalComponent
+            buttonType="primary"
             text="Crea una nueva ruta"
             title="Agrega una nueva ruta"
           >
             <RouteForm />
           </ModalComponent>
         </section>
-        <TableComponent data={routesData} />
+        <TableComponent
+          pagination={undefined}
+          columns={columns}
+          data={routesData}
+        />
       </section>
     </section>
   );
