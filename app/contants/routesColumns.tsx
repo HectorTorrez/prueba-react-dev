@@ -4,7 +4,7 @@ import SwitchComponent from "../components/switch";
 import { DataType, RouteFromFirebase } from "../types/routes";
 import { getState } from "../helpers/getState";
 import ModalComponent from "../components/modal";
-import EditForm from "../components/edit-form";
+import EditForm from "../components/edit-routes-form";
 import DeleteButton from "../components/delete-button";
 import { deleteDocument } from "../helpers/delete";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";

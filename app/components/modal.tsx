@@ -32,6 +32,7 @@ const ModalComponent = ({
         {text}
       </Button>
       <Modal
+        destroyOnClose
         title={title}
         open={isModalOpen}
         onCancel={handleCancel}
