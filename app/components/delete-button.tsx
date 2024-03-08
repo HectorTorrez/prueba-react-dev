@@ -28,7 +28,6 @@ const DeleteButton = ({
   };
 
   const cancel = (e: React.MouseEvent<HTMLElement> | undefined) => {
-    console.log(e);
     message.error(cancelMessage);
   };
   return (

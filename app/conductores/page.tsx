@@ -3,7 +3,7 @@ import ModalComponent from "../components/modal";
 import TableComponent from "../components/table";
 import DriverForm from "./components/driver-form";
 import { getDrivers } from "../api/route";
-import { driverColumns } from "../contants/driversColumns";
+import { driverColumns } from "./constants/driversColumns";
 
 export default async function DriversPage() {
   const driversData = await getDrivers();

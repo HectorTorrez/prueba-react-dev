@@ -41,8 +41,6 @@ export default function UploadImageComponent({
   const [imageUrl, setImageUrl] = useState<string>(avatar);
   const [loading, setLoading] = useState(false);
 
-  console.log(avatar);
-
   const handleChange: UploadProps["onChange"] = (info) => {
     if (info.file.status === "uploading") {
       setLoading(true);

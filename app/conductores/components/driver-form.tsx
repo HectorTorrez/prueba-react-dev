@@ -22,7 +22,6 @@ const DriverForm = () => {
   const [form] = Form.useForm();
 
   const onFinish = async (values: DriverTypes) => {
-    console.log(values);
     if (avatar.length === 0) {
       message.error("Debes subir una imagen");
       return;
@@ -68,10 +67,7 @@ const DriverForm = () => {
       style={{ maxWidth: 600 }}
     >
       <Form.Item name="imageUrl" label="Foto de Perfil">
-        <UploadImageComponent setAvatar={handleGetAvatar} />
-        {/* {avatar.length === 0 && (
-          <p style={{ color: "red" }}>Debes subir una imagen</p>
-        )} */}
+        <UploadImageComponent avatar={avatar} setAvatar={handleGetAvatar} />
       </Form.Item>
       <Form.Item name="name" label="Nombre " rules={[{ required: true }]}>
         <Input />
