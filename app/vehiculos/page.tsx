@@ -1,13 +1,12 @@
 import React from "react";
 import ModalComponent from "../components/modal";
-import CarForm from "./components/vehicle-from";
+import CarForm from "./components/vehicle-form";
 import SectionLayout from "../components/section-layout";
 import Title from "antd/es/typography/Title";
 import { BUTTONS_ADD_WIDTH } from "../contants/styles";
 import { getVehicles } from "../api/route";
 import { vehicleColumns } from "./constants/vehiclesColumns";
 import TableComponent from "../components/table";
-// import TableComponent from "../components/table";
 
 export default async function page() {
   const vehiclesData = await getVehicles();
