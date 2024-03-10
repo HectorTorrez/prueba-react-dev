@@ -7,6 +7,12 @@ import { BUTTONS_ADD_WIDTH } from "../contants/styles";
 import { getVehicles } from "../api/route";
 import { vehicleColumns } from "./constants/vehiclesColumns";
 import TableComponent from "../components/table";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vehículos",
+  description: "Vehículos de la empresa",
+};
 
 export default async function page() {
   const vehiclesData = await getVehicles();
@@ -29,7 +35,7 @@ export default async function page() {
         <TableComponent
           pagination={undefined}
           data={vehiclesData}
-          columns={vehicleColumns as any}
+          columns={vehicleColumns as []}
         />
       </SectionLayout>
     </section>

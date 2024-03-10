@@ -6,11 +6,18 @@ import { columns } from "./contants/routesConstants/routesColumns";
 import SectionLayout from "./components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "./contants/styles";
 import Title from "antd/es/typography/Title";
+import { Metadata } from "next";
+import { RouteFromFirebase } from "./types/routes";
 
 export const fetchCache = "force-no-store";
 export const revalidate = 0;
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Rutas",
+  description: "Rutas de la empresa",
+};
 
 export default async function Home() {
   const routesData = await getData();
@@ -33,7 +40,7 @@ export default async function Home() {
 
         <TableComponent
           pagination={undefined}
-          columns={columns as any}
+          columns={columns as []}
           data={routesData}
         />
       </SectionLayout>

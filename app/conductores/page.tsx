@@ -7,6 +7,12 @@ import { driverColumns } from "./constants/driversColumns";
 import SectionLayout from "../components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "../contants/styles";
 import Title from "antd/es/typography/Title";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conductores",
+  description: "Conductores de la empresa",
+};
 
 export default async function DriversPage() {
   const driversData = await getDrivers();
@@ -29,7 +35,7 @@ export default async function DriversPage() {
         <TableComponent
           pagination={undefined}
           data={driversData}
-          columns={driverColumns as any}
+          columns={driverColumns as []}
         />
       </SectionLayout>
     </section>
