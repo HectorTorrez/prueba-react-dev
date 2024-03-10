@@ -37,6 +37,7 @@ const RouteForm = ({
         origin: values.origin,
         destiny: values.destiny,
         key: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
       });
       message.success("Ruta agregada");
       location.reload();

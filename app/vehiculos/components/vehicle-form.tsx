@@ -49,6 +49,7 @@ const VehicleForm = ({
         vehicleCapacity: values.vehicleCapacity,
         typeOfVehicle: values.typeOfVehicle,
         key: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
       });
       message.success("Vehículo agregado");
       location.reload();

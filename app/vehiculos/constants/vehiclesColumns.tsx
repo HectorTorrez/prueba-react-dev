@@ -80,6 +80,8 @@ export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
         >
           <VehicleForm isEdit={true} values={record} />
         </ModalComponent>
+
+        {/* boton para eliminar */}
         <DeleteButton
           buttonType="link"
           buttonText={
@@ -87,9 +89,9 @@ export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
           }
           cancelMessage="No se ha eliminado"
           confirmMessage="Se ha eliminado"
-          onDelete={() => deleteDocument("conductores", record.idDoc)}
-          title="¿Quieres eliminar este conductor?"
-          description="¿Está seguro que desea eliminar este conductor?"
+          onDelete={() => deleteDocument("vehiculos", record.idDoc)}
+          title="¿Quieres eliminar este vehículo?"
+          description="¿Está seguro que desea eliminar este vehículo?"
         />
 
         {/* modal para ver mas informacion de los conductores */}

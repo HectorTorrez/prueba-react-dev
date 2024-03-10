@@ -52,6 +52,7 @@ const DriverForm = ({
         phone: values.phone,
         email: values.email,
         key: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
       });
       message.success("Conductor agregado");
       location.reload();

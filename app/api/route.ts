@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { DataType, RouteFromFirebase } from "../types/routes";
 import { DriverTypesFromFirebase } from "../types/drivers";
@@ -11,7 +11,9 @@ export const dynamic = "force-dynamic";
 // Esta funcion obtiene las rutas de la base de datos
 
 export const getData = async () => {
-  const querySnapshot = await getDocs(collection(db, "rutas"));
+  const q = query(collection(db, "rutas"), orderBy("createdAt", "desc"));
+  // const querySnapshot = await getDocs(collection(db, "rutas"));
+  const querySnapshot = await getDocs(q);
   const data: RouteFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
     return data.push({ idDoc: doc.id, ...doc.data() } as RouteFromFirebase);
@@ -22,7 +24,9 @@ export const getData = async () => {
 
 // Esta funcion obtiene los conductores de la base de datos
 export const getDrivers = async () => {
-  const querySnapshot = await getDocs(collection(db, "conductores"));
+  const q = query(collection(db, "conductores"), orderBy("createdAt", "desc"));
+  // const querySnapshot = await getDocs(collection(db, "conductores"));
+  const querySnapshot = await getDocs(q);
   const data: DriverTypesFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
     return data.push({
@@ -35,7 +39,9 @@ export const getDrivers = async () => {
 };
 
 export const getVehicles = async () => {
-  const querySnapshot = await getDocs(collection(db, "vehiculos"));
+  const q = query(collection(db, "vehiculos"), orderBy("createdAt", "desc"));
+  // const querySnapshot = await getDocs(collection(db, "vehiculos"));
+  const querySnapshot = await getDocs(q);
   const data: VehicleFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
     return data.push({
