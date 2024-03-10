@@ -1,5 +1,4 @@
 export interface DataType {
-  idDoc: string;
   id: string;
   state: boolean;
   type: string;

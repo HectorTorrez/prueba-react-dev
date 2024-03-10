@@ -1,7 +1,7 @@
 "use client";
 import { Space, TableProps } from "antd";
 import SwitchComponent from "../../components/switch";
-import { DataType, RouteFromFirebase } from "../../types/routes";
+import { RouteFromFirebase } from "../../types/routes";
 import { getState } from "../../helpers/getState";
 import ModalComponent from "../../components/modal";
 import EditForm from "../../components/edit-routes-form";
@@ -12,7 +12,7 @@ import TableComponent from "../../components/table";
 import { viewColumns } from "./viewRouteColumns";
 
 // columnas de la tabla de rutas
-export const columns: TableProps<DataType>["columns"] = [
+export const columns: TableProps<RouteFromFirebase>["columns"] = [
   {
     title: "Tipo de viaje",
     dataIndex: "type",
@@ -88,7 +88,7 @@ export const columns: TableProps<DataType>["columns"] = [
         >
           <TableComponent
             pagination={false}
-            columns={viewColumns as any}
+            columns={viewColumns as []}
             data={[record]}
           />
         </ModalComponent>

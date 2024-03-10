@@ -10,11 +10,11 @@ export const dynamic = "force-dynamic";
 
 // Esta funcion obtiene las rutas de la base de datos
 
-export const getData = async (): Promise<DataType[]> => {
+export const getData = async () => {
   const querySnapshot = await getDocs(collection(db, "rutas"));
-  const data: DataType[] = [];
+  const data: RouteFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
-    return data.push({ idDoc: doc.id, ...doc.data() } as DataType);
+    return data.push({ idDoc: doc.id, ...doc.data() } as RouteFromFirebase);
   });
 
   return data;

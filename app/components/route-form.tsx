@@ -3,6 +3,7 @@ import React from "react";
 import { Button, Form, Input, Select, Space, message } from "antd";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/firebase";
+import { DataType } from "../types/routes";
 
 const layout = {
   labelCol: { span: 8 },
@@ -17,7 +18,7 @@ const tailLayout = {
 const RouteForm: React.FC = () => {
   const [form] = Form.useForm();
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: DataType) => {
     try {
       await addDoc(collection(db, "rutas"), {
         id: crypto.randomUUID(),

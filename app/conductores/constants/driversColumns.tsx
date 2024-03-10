@@ -92,7 +92,7 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
         >
           <TableComponent
             pagination={false}
-            columns={viewDriversColumns as any}
+            columns={viewDriversColumns as []}
             data={[record]}
           />
         </ModalComponent>
