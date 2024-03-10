@@ -6,10 +6,13 @@ import { DataType } from "../types/routes";
 import { TableProps } from "antd/lib";
 import { DriverTypesFromFirebase } from "../types/drivers";
 import styled from "styled-components";
+import { VehicleFromFirebase } from "../types/vehicles";
 
 type TableComponentProps = {
-  data: DataType[] | DriverTypesFromFirebase[];
-  columns: TableProps<DataType | DriverTypesFromFirebase>["columns"];
+  data: DataType[] | DriverTypesFromFirebase[] | VehicleFromFirebase[];
+  columns: TableProps<
+    DataType | DriverTypesFromFirebase | VehicleFromFirebase
+  >["columns"];
   pagination: false | object | undefined;
 };
 
