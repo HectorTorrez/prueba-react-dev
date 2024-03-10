@@ -35,7 +35,7 @@ export default async function Home() {
           buttonWidth={BUTTONS_ADD_WIDTH}
           width="auto"
         >
-          <RouteForm />
+          <RouteForm isEdit={false} />
         </ModalComponent>
 
         <TableComponent

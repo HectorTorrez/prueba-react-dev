@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Button, Form, Input, Select, Space, message } from "antd";
-import { addDoc, collection } from "firebase/firestore";
+import { Button, Form, Input, Space, message } from "antd";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { DataType } from "../types/routes";
+import { DataType, RouteFromFirebase } from "../types/routes";
 
 const layout = {
   labelCol: { span: 8 },
@@ -15,7 +15,16 @@ const tailLayout = {
 };
 
 // Formulario para agregar rutas
-const RouteForm: React.FC = () => {
+// este componente recibe un parametro opcional value que es de tipo RouteFromFirebase para poder editar una ruta
+// estos valores se pasan al formulario para que el usuario pueda editarlos en el parametro initialValue
+// este recibe un booleado isEdit para saber si se esta editando o creando una nueva ruta
+const RouteForm = ({
+  value,
+  isEdit,
+}: {
+  value?: RouteFromFirebase;
+  isEdit: boolean;
+}) => {
   const [form] = Form.useForm();
 
   const onFinish = async (values: DataType) => {
@@ -37,6 +46,21 @@ const RouteForm: React.FC = () => {
     }
   };
 
+  const onEdit = async () => {
+    if (!value) return;
+    const ruta = doc(db, "rutas", value.idDoc);
+    try {
+      await updateDoc(ruta, {
+        name: form.getFieldValue("name"),
+        type: form.getFieldValue("type"),
+        origin: form.getFieldValue("origin"),
+        destiny: form.getFieldValue("destiny"),
+      });
+      message.success("Ruta actualizada");
+      location.reload();
+    } catch (error) {}
+  };
+
   const onReset = () => {
     form.resetFields();
   };
@@ -46,16 +70,22 @@ const RouteForm: React.FC = () => {
       {...layout}
       form={form}
       name="control-hooks"
-      onFinish={onFinish}
+      onFinish={isEdit ? onEdit : onFinish}
       style={{ maxWidth: 600 }}
     >
-      <Form.Item name="type" label="Tipo de ruta" rules={[{ required: true }]}>
+      <Form.Item
+        initialValue={value?.type ?? ""}
+        name="type"
+        label="Tipo de ruta"
+        rules={[{ required: true }]}
+      >
         <Input />
       </Form.Item>
       <Form.Item
         name="name"
         label="Nombre de la ruta"
         rules={[{ required: true }]}
+        initialValue={value?.name ?? ""}
       >
         <Input maxLength={50} />
       </Form.Item>
@@ -63,6 +93,7 @@ const RouteForm: React.FC = () => {
         name="origin"
         label="Origen de la ruta"
         rules={[{ required: true }]}
+        initialValue={value?.origin ?? ""}
       >
         <Input maxLength={50} />
       </Form.Item>
@@ -70,6 +101,7 @@ const RouteForm: React.FC = () => {
         name="destiny"
         label="Destino de la ruta"
         rules={[{ required: true }]}
+        initialValue={value?.destiny ?? ""}
       >
         <Input maxLength={50} />
       </Form.Item>

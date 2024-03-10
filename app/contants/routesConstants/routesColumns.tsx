@@ -4,12 +4,12 @@ import SwitchComponent from "../../components/switch";
 import { RouteFromFirebase } from "../../types/routes";
 import { getState } from "../../helpers/getState";
 import ModalComponent from "../../components/modal";
-import EditForm from "../../components/edit-routes-form";
 import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import TableComponent from "../../components/table";
 import { viewColumns } from "./viewRouteColumns";
+import RouteForm from "@/app/components/route-form";
 
 // columnas de la tabla de rutas
 export const columns: TableProps<RouteFromFirebase>["columns"] = [
@@ -65,7 +65,7 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
           width="auto"
           buttonWidth="100px"
         >
-          <EditForm value={record as RouteFromFirebase} />
+          <RouteForm value={record as RouteFromFirebase} isEdit />
         </ModalComponent>
         <DeleteButton
           buttonType="link"

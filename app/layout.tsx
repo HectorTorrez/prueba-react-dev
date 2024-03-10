@@ -7,6 +7,7 @@ import Navbar from "./components/nav";
 const inter = Inter({ subsets: ["latin"] });
 import esES from "antd/locale/es_ES";
 import { ConfigProvider } from "antd";
+import NavbarAnt from "./components/navbar";
 
 export const metadata: Metadata = {
   title: "Rutas",
@@ -27,7 +28,8 @@ export default function RootLayout({
         <AntdRegistry>
           <ConfigProvider locale={esES}>
             <StyledComponentsRegistry>
-              <Navbar />
+              {/* <Navbar /> */}
+              <NavbarAnt />
               {children}
             </StyledComponentsRegistry>
           </ConfigProvider>
