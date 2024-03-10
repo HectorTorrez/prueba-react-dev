@@ -53,7 +53,7 @@ const EditVehicleForm = ({ value }: { value: VehicleFromFirebase }) => {
 
   const onReset = () => {
     form.resetFields();
-    setAvatar("");
+    setAvatar(value.imageUrl);
   };
 
   const handleGetAvatar = (url: string) => {

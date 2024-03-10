@@ -45,6 +45,7 @@ const EditDriversForm = ({ value }: { value: DriverTypesFromFirebase }) => {
 
   const onReset = () => {
     form.resetFields();
+    setAvatar(value.imageUrl);
   };
 
   return (
