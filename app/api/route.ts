@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { DataType, RouteFromFirebase } from "../types/routes";
 import { DriverTypesFromFirebase } from "../types/drivers";
+import { VehicleFromFirebase } from "../types/vehicles";
 
 export const fetchCache = "force-no-store";
 
@@ -28,6 +29,19 @@ export const getDrivers = async () => {
       idDoc: doc.id,
       ...doc.data(),
     } as DriverTypesFromFirebase);
+  });
+
+  return data;
+};
+
+export const getVehicles = async () => {
+  const querySnapshot = await getDocs(collection(db, "vehiculos"));
+  const data: VehicleFromFirebase[] = [];
+  querySnapshot.forEach((doc) => {
+    return data.push({
+      idDoc: doc.id,
+      ...doc.data(),
+    } as VehicleFromFirebase);
   });
 
   return data;
