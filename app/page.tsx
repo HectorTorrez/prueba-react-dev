@@ -3,7 +3,6 @@ import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
 import { getData } from "./api/route";
 import { columns } from "./components/routesColumns";
-import { Flex } from "antd";
 import SectionLayout from "./components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "./contants/styles";
 import Title from "antd/es/typography/Title";

@@ -20,7 +20,6 @@ const ModalComponent = ({
   width: string;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const router = useRouter();
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -39,6 +38,7 @@ const ModalComponent = ({
         {text}
       </Button>
       <Modal
+        style={{ overflow: "hidden" }}
         destroyOnClose
         title={title}
         open={isModalOpen}
