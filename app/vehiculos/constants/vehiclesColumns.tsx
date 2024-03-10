@@ -9,9 +9,9 @@ import { deleteDocument } from "../../helpers/delete";
 import { TableProps } from "antd/lib";
 import { getState } from "../../helpers/getState";
 import { VehicleFromFirebase } from "@/app/types/vehicles";
-import EditVehicleForm from "../components/edit-vehicle-form";
 import { viewVehiclesColumns } from "./viewVehiclesColumns";
 import TableComponent from "@/app/components/table";
+import VehicleForm from "../components/vehicle-form";
 
 // columnas de la tabla de vehiculos
 export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
@@ -78,7 +78,7 @@ export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
           title="Editar conductor"
         >
-          <EditVehicleForm value={record as VehicleFromFirebase} />
+          <VehicleForm isEdit={true} values={record} />
         </ModalComponent>
         <DeleteButton
           buttonType="link"
