@@ -30,7 +30,7 @@ export default async function DriversPage() {
           buttonWidth={BUTTONS_ADD_WIDTH}
           width="auto"
         >
-          <DriverForm />
+          <DriverForm isEdit={false} />
         </ModalComponent>
         <TableComponent
           pagination={undefined}

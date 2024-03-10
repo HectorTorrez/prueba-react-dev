@@ -9,9 +9,9 @@ import { deleteDocument } from "../../helpers/delete";
 
 import { TableProps } from "antd/lib";
 import { getState } from "../../helpers/getState";
-import EditDriversForm from "../components/edit";
 import TableComponent from "@/app/components/table";
 import { viewDriversColumns } from "./viewDriversColumns";
+import DriverForm from "../components/driver-form";
 
 // columnas de la tabla de conductores
 export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
@@ -68,7 +68,8 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
           title="Editar conductor"
         >
-          <EditDriversForm value={record as DriverTypesFromFirebase} />
+          {/* <EditDriversForm value={record as DriverTypesFromFirebase} /> */}
+          <DriverForm values={record as DriverTypesFromFirebase} isEdit />
         </ModalComponent>
         <DeleteButton
           buttonType="link"

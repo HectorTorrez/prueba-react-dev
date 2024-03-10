@@ -30,7 +30,7 @@ export default async function page() {
           buttonType="primary"
           buttonWidth={BUTTONS_ADD_WIDTH}
         >
-          <CarForm />
+          <CarForm isEdit={false} />
         </ModalComponent>
         <TableComponent
           pagination={undefined}
