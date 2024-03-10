@@ -9,6 +9,7 @@ export async function changeState(
   document: string,
   state?: boolean
 ) {
+  // recibiendo el id del documento y el nombre de la coleccion a la que pertenece el documento se actualiza el estado del documento
   const ruta = doc(db, document, idDoc);
   try {
     await updateDoc(ruta, {

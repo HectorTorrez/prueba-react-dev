@@ -74,6 +74,7 @@ export const columns: TableProps<DataType>["columns"] = [
           }
           cancelMessage="No se ha eliminado"
           confirmMessage="Se ha eliminado"
+          // paso la funcion helper deleteDocument para eliminar el documento
           onDelete={() => deleteDocument("rutas", record.idDoc)}
           title="¿Quieres eliminar esta ruta?"
           description="¿Está seguro que desea eliminar esta ruta?"
