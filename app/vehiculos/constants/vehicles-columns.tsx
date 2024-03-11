@@ -9,7 +9,7 @@ import { deleteDocument } from "../../helpers/delete";
 import { TableProps } from "antd/lib";
 import { getState } from "../../helpers/getState";
 import { VehicleFromFirebase } from "@/app/types/vehicles";
-import { viewVehiclesColumns } from "./viewVehiclesColumns";
+import { viewVehiclesColumns } from "./view-vehicles-columns";
 import TableComponent from "@/app/components/table";
 import VehicleForm from "../components/vehicle-form";
 

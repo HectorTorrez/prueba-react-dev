@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Form, Input, Space, message } from "antd";
+import { Button, Form, Input, Select, Space, message } from "antd";
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import UploadImageComponent from "../../components/upload-image";
 
 import { VehicleFromFirebase, VehicleTypes } from "@/app/types/vehicles";
+import { typeOfVehicle } from "../constants/typeOfVehicle";
 
 const layout = {
   labelCol: { span: 8 },
@@ -150,12 +151,18 @@ const VehicleForm = ({
         <Input />
       </Form.Item>
       <Form.Item
-        initialValue={values?.typeOfVehicle ?? ""}
+        initialValue={values?.typeOfVehicle ?? null}
         name="typeOfVehicle"
-        label="Tipo de Vehiculo"
-        rules={[{ required: true, max: 8 }]}
+        label="Tipo de Vehículo"
+        rules={[{ required: true }]}
       >
-        <Input />
+        <Select placeholder="Selecciona una licencia" allowClear>
+          {typeOfVehicle.map((type) => (
+            <Select.Option key={type.value} value={type.value}>
+              {type.name}
+            </Select.Option>
+          ))}
+        </Select>
       </Form.Item>
 
       <Form.Item {...tailLayout}>
