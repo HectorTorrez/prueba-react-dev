@@ -24,7 +24,7 @@ export default async function page() {
       </Title>
       <SectionLayout>
         <ModalComponent
-          width="auto"
+          width="1000px"
           text="Agrega un nuevo vehículo"
           title="Agrega un nuevo vehículo"
           buttonType="primary"

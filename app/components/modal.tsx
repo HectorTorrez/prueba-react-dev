@@ -17,7 +17,7 @@ const ModalComponent = ({
   title: string | React.ReactNode;
   buttonType?: "primary" | "default" | "dashed" | "link" | "text";
   buttonWidth: string;
-  width: string;
+  width?: string;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
