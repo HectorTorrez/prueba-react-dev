@@ -29,6 +29,14 @@ const items: MenuProps["items"] = [
     ),
     key: "vehiculos",
   },
+  {
+    label: (
+      <Link href="/viaje" rel="noopener noreferrer">
+        Viajes
+      </Link>
+    ),
+    key: "viaje",
+  },
 ];
 
 const NavbarAnt: React.FC = () => {
