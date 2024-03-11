@@ -13,11 +13,11 @@ import {
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { ShipmentTypes, ShipmentTypesFromFirebase } from "@/app/types/shipment";
 import { db } from "@/app/firebase/firebase";
-import { RouteFromFirebase } from "@/app/types/routes";
-import { DriverTypesFromFirebase } from "@/app/types/drivers";
-import { VehicleFromFirebase } from "@/app/types/vehicles";
-import { date, hour } from "@/app/helpers/getDate";
+
 import dayjs from "dayjs";
+import useGetRoutes from "@/app/hooks/useGetActiveRoutes";
+import useGetActiveDriver from "@/app/hooks/useGetActiveDrivers";
+import useGetActiveVehicle from "@/app/hooks/useGetActiveVehicle";
 
 const layout = {
   labelCol: { span: 8 },
@@ -36,17 +36,16 @@ const tailLayout = {
 const ShipmentForm = ({
   values,
   isEdit,
-  drivers,
-  vehicles,
-  routes,
 }: {
   values?: ShipmentTypesFromFirebase;
   isEdit: boolean;
-  drivers?: DriverTypesFromFirebase[];
-  vehicles?: VehicleFromFirebase[];
-  routes?: RouteFromFirebase[];
 }) => {
   const [form] = Form.useForm();
+
+  const routes = useGetRoutes();
+  const drivers = useGetActiveDriver();
+  const vehicles = useGetActiveVehicle();
+  console.log(routes);
 
   const onFinish = async (values: ShipmentTypes) => {
     // convierto las fechas y horas a objetos Date para poder guardarlas en la base de datos enviandolas como toISOString
@@ -87,6 +86,7 @@ const ShipmentForm = ({
       message.error("Error al obtener el viaje");
       return;
     }
+
     const ruta = doc(db, "viajes", values.idDoc);
     try {
       await updateDoc(ruta, {
@@ -110,6 +110,10 @@ const ShipmentForm = ({
   const onReset = () => {
     form.resetFields();
   };
+
+  useEffect(() => {
+    console.log(form.getFieldValue("dateCollection"));
+  }, [form]);
 
   return (
     <Form
@@ -193,7 +197,7 @@ const ShipmentForm = ({
         name="vehicle"
         label="Seleccionar un vehículo"
         rules={[{ required: true }]}
-        initialValue={values?.route ?? null}
+        initialValue={values?.vehicle ?? null}
       >
         <Select placeholder="Selecciona un vehículo" allowClear>
           {vehicles?.map((type) => (
