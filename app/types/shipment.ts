@@ -1,7 +1,9 @@
 export interface ShipmentTypes {
   name: string;
-  dateTimeCollection: string;
-  dateTimeArrival: string;
+  dateCollection: string;
+  timeCollection: string;
+  dateArrival: string;
+  timeArrival: string;
   driver: string;
   vehicle: string;
   route: string;
