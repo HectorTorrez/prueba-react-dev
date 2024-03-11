@@ -143,7 +143,7 @@ const DriverForm = ({
         <Input type="number" maxLength={2} />
       </Form.Item>
       <Form.Item
-        initialValue={values?.licence ?? ""}
+        initialValue={values?.licence ?? null}
         name="licence"
         label="Licencia"
         rules={[{ required: true }]}

@@ -3,6 +3,7 @@ import { GetProp } from "antd/lib";
 import React, { useState } from "react";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import Image from "next/image";
 
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 
@@ -44,6 +45,10 @@ export default function UploadImageComponent({
   const [loading, setLoading] = useState(false);
 
   const handleChange: UploadProps["onChange"] = (info) => {
+    if (info.file.status === "error") {
+      message.error("Utiliza una imagen publica");
+      return;
+    }
     if (info.file.status === "uploading") {
       setLoading(true);
       return;
@@ -75,7 +80,13 @@ export default function UploadImageComponent({
       style={{ height: "100%" }}
     >
       {imageUrl ? (
-        <img src={imageUrl ?? avatar} alt="avatar" style={{ width: "100%" }} />
+        <Image
+          src={imageUrl ?? avatar}
+          alt="avatar"
+          // style={{ width: "100%" }}
+          width={200}
+          height={200}
+        />
       ) : (
         uploadButton
       )}

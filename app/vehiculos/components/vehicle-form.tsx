@@ -131,7 +131,7 @@ const VehicleForm = ({
         label="Año"
         rules={[{ required: true }]}
       >
-        <Input />
+        <Input type="number" />
       </Form.Item>
       <Form.Item
         initialValue={values?.vehiclePlate ?? ""}
