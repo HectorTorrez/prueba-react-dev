@@ -6,11 +6,19 @@ import { RouteFromFirebase } from "../types/routes";
 import { TableProps } from "antd/lib";
 import { DriverTypesFromFirebase } from "../types/drivers";
 import { VehicleFromFirebase } from "../types/vehicles";
+import { ShipmentTypesFromFirebase } from "../types/shipment";
 
 type TableComponentProps = {
-  data: RouteFromFirebase[] | DriverTypesFromFirebase[] | VehicleFromFirebase[];
+  data:
+    | RouteFromFirebase[]
+    | DriverTypesFromFirebase[]
+    | VehicleFromFirebase[]
+    | ShipmentTypesFromFirebase[];
   columns: TableProps<
-    RouteFromFirebase | DriverTypesFromFirebase | VehicleFromFirebase
+    | RouteFromFirebase
+    | DriverTypesFromFirebase
+    | VehicleFromFirebase
+    | ShipmentTypesFromFirebase
   >["columns"];
   pagination: false | object | undefined;
 };

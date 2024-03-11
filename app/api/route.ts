@@ -1,8 +1,9 @@
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { DataType, RouteFromFirebase } from "../types/routes";
+import { RouteFromFirebase } from "../types/routes";
 import { DriverTypesFromFirebase } from "../types/drivers";
 import { VehicleFromFirebase } from "../types/vehicles";
+import { ShipmentTypesFromFirebase } from "../types/shipment";
 
 export const fetchCache = "force-no-store";
 
@@ -48,6 +49,21 @@ export const getVehicles = async () => {
       idDoc: doc.id,
       ...doc.data(),
     } as VehicleFromFirebase);
+  });
+
+  return data;
+};
+
+export const getShipments = async () => {
+  const q = query(collection(db, "viajes"), orderBy("createdAt", "desc"));
+  // const querySnapshot = await getDocs(collection(db, "viajes"));
+  const querySnapshot = await getDocs(q);
+  const data: ShipmentTypesFromFirebase[] = [];
+  querySnapshot.forEach((doc) => {
+    return data.push({
+      idDoc: doc.id,
+      ...doc.data(),
+    } as ShipmentTypesFromFirebase);
   });
 
   return data;
