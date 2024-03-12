@@ -7,6 +7,17 @@ import { getShipments } from "../api/getDataFromFirebase";
 import ShipmentForm from "./components/shipment-form";
 import TableComponent from "../components/table";
 import { shipmentColumns } from "./constants/shipment-columns";
+import { Metadata } from "next";
+
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Viajes",
+  description: "Viajes de la empresa",
+};
 
 export default async function ShipmentPage() {
   const shipments = await getShipments();

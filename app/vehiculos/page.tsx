@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: "Vehículos de la empresa",
 };
 
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
+export const dynamic = "force-dynamic";
+
 export default async function page() {
   const vehiclesData = await getVehicles();
 

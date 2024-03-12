@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: "Conductores de la empresa",
 };
 
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
+export const dynamic = "force-dynamic";
+
 export default async function DriversPage() {
   const driversData = await getDrivers();
 
