@@ -7,7 +7,6 @@ import SectionLayout from "./components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "./contants/styles";
 import Title from "antd/es/typography/Title";
 import { Metadata } from "next";
-import { RouteFromFirebase } from "./types/routes";
 
 export const fetchCache = "force-no-store";
 export const revalidate = 0;

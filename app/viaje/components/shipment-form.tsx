@@ -45,7 +45,6 @@ const ShipmentForm = ({
   const routes = useGetRoutes();
   const drivers = useGetActiveDriver();
   const vehicles = useGetActiveVehicle();
-  console.log(routes);
 
   const onFinish = async (values: ShipmentTypes) => {
     // convierto las fechas y horas a objetos Date para poder guardarlas en la base de datos enviandolas como toISOString
@@ -110,10 +109,6 @@ const ShipmentForm = ({
   const onReset = () => {
     form.resetFields();
   };
-
-  useEffect(() => {
-    console.log(form.getFieldValue("dateCollection"));
-  }, [form]);
 
   return (
     <Form
