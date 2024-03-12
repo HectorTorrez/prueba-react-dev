@@ -2,7 +2,7 @@ import React from "react";
 import ModalComponent from "../components/modal";
 import TableComponent from "../components/table";
 import DriverForm from "./components/driver-form";
-import { getDrivers } from "../api/route";
+import { getDrivers } from "../api/getDataFromFirebase";
 import { driverColumns } from "./constants/driversColumns";
 import SectionLayout from "../components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "../contants/styles";

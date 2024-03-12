@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getActiveDrivers, getActiveRoutes } from "../api/route";
+import { getActiveDrivers, getActiveRoutes } from "../api/getDataFromFirebase";
 import { DriverTypesFromFirebase } from "../types/drivers";
 
 export default function useGetActiveDriver() {

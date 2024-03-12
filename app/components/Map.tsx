@@ -89,6 +89,7 @@ const MapComponent = React.memo(function MemoMapComponent({
         });
     };
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const calculateRoute = useCallback(

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getActiveVehicles } from "../api/route";
+import { getActiveVehicles } from "../api/getDataFromFirebase";
 import { VehicleFromFirebase } from "../types/vehicles";
 
 export default function useGetActiveVehicle() {

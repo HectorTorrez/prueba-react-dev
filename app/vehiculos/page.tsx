@@ -4,7 +4,7 @@ import CarForm from "./components/vehicle-form";
 import SectionLayout from "../components/section-layout";
 import Title from "antd/es/typography/Title";
 import { BUTTONS_ADD_WIDTH } from "../contants/styles";
-import { getVehicles } from "../api/route";
+import { getVehicles } from "../api/getDataFromFirebase";
 import { vehicleColumns } from "./constants/vehicles-columns";
 import TableComponent from "../components/table";
 import { Metadata } from "next";

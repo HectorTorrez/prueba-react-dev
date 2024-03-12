@@ -3,7 +3,7 @@ import SectionLayout from "../components/section-layout";
 import Title from "antd/es/typography/Title";
 import ModalComponent from "../components/modal";
 import { BUTTONS_ADD_WIDTH } from "../contants/styles";
-import { getShipments } from "../api/route";
+import { getShipments } from "../api/getDataFromFirebase";
 import ShipmentForm from "./components/shipment-form";
 import TableComponent from "../components/table";
 import { shipmentColumns } from "./constants/shipment-columns";

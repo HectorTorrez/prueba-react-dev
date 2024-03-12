@@ -1,7 +1,7 @@
 import TableComponent from "./components/table";
 import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
-import { getData } from "./api/route";
+import { getData } from "./api/getDataFromFirebase";
 import { columns } from "./contants/routesConstants/routesColumns";
 import SectionLayout from "./components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "./contants/styles";
