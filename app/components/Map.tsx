@@ -6,7 +6,9 @@ import { message } from "antd";
 
 // el api key esta aqui por el momento ya que tomtom da error de cors y no deja hacer peticiones desde el localhost
 // se cambiara cuando se suba a produccion
-const API_KEY = process.env.API_KEY_TOMTOM;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY_TOMTOM;
+
+console.log(API_KEY);
 
 // Todas las importaciones estan dentro de la funcion para que no se carguen hasta que se llame a la funcion
 // ya que tomtom tiene problemas con el server side rendering de next a pesar de que este es un 'use client'
