@@ -176,10 +176,10 @@ const DriverForm = ({
       <Form.Item {...tailLayout}>
         <Space>
           <Button type="primary" htmlType="submit">
-            Submit
+            {isEdit ? "Editar" : "Agregar"}
           </Button>
           <Button htmlType="button" onClick={onReset}>
-            Reset
+            Restablecer
           </Button>
         </Space>
       </Form.Item>

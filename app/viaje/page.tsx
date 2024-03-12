@@ -18,7 +18,7 @@ export default async function ShipmentPage() {
       </Title>
       <SectionLayout>
         <ModalComponent
-          width="1000px"
+          width="700px"
           text="Agrega un nuevo viaje"
           title="Agrega un  viaje"
           buttonType="primary"

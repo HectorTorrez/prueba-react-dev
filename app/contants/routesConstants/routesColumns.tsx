@@ -10,6 +10,7 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import TableComponent from "../../components/table";
 import { viewColumns } from "./viewRouteColumns";
 import RouteForm from "@/app/components/route-form";
+import Map from "@/app/provider/MapProvider";
 
 // columnas de la tabla de rutas
 export const columns: TableProps<RouteFromFirebase>["columns"] = [
@@ -62,7 +63,7 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
           buttonType="link"
           text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}
           title="Editar ruta"
-          width="auto"
+          width="700px"
           buttonWidth="100px"
         >
           <RouteForm value={record as RouteFromFirebase} isEdit />
@@ -91,6 +92,15 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
             columns={viewColumns as []}
             data={[record]}
           />
+        </ModalComponent>
+        <ModalComponent
+          buttonWidth="100px"
+          buttonType="primary"
+          text="Ver en mapa"
+          title="Mapa"
+          width="auto"
+        >
+          <Map firstCity={record.origin} secondCity={record.destiny} />
         </ModalComponent>
       </Space>
     ),

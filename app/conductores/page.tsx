@@ -28,7 +28,7 @@ export default async function DriversPage() {
           title="Agrega un nuevo conductor"
           buttonType="primary"
           buttonWidth={BUTTONS_ADD_WIDTH}
-          width="1000px"
+          width="700px"
         >
           <DriverForm isEdit={false} />
         </ModalComponent>

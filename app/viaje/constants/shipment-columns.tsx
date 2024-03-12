@@ -96,7 +96,7 @@ export const shipmentColumns: TableProps<ShipmentTypesFromFirebase>["columns"] =
           <Space size="middle">
             {/* modal para editar conductor el cual el hijo recibe los valores */}
             <ModalComponent
-              width="auto"
+              width="700px"
               buttonWidth="100px"
               buttonType="link"
               text={<EditOutlined style={{ fontSize: 20, display: "block" }} />}

@@ -32,7 +32,7 @@ export default async function Home() {
           text="Crea una nueva ruta"
           title="Agrega una nueva ruta"
           buttonWidth={BUTTONS_ADD_WIDTH}
-          width="1000px"
+          width="700px"
         >
           <RouteForm isEdit={false} />
         </ModalComponent>
