@@ -60,7 +60,7 @@ const MapComponent = React.memo(function MemoMapComponent({
       );
       services
         .geocode({
-          key: API_KEY,
+          key: API_KEY ?? "",
           query: `${firstCity}, El Salvador`,
         })
         .then((result) => {
@@ -76,7 +76,7 @@ const MapComponent = React.memo(function MemoMapComponent({
         });
       services
         .geocode({
-          key: API_KEY,
+          key: API_KEY ?? "",
           query: `${secondCity}, El Salvador`,
         })
         .then((result) => {
