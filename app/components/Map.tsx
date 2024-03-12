@@ -8,8 +8,6 @@ import { message } from "antd";
 // se cambiara cuando se suba a produccion
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_TOMTOM;
 
-console.log(API_KEY);
-
 // Todas las importaciones estan dentro de la funcion para que no se carguen hasta que se llame a la funcion
 // ya que tomtom tiene problemas con el server side rendering de next a pesar de que este es un 'use client'
 // por eso algunos tipados estan como any
