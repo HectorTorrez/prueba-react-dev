@@ -1,0 +1,14 @@
+.myTable thead th {
+  background: #4472c4 !important;
+  color: white !important;
+  border: white !important;
+}
+
+.inactiveRow {
+  background-color: #f2f2f2;
+  font-weight: 400;
+}
+.activeRow {
+  background-color: #e6f7ff;
+  font-weight: 500;
+}

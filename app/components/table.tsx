@@ -7,6 +7,8 @@ import { TableProps } from "antd/lib";
 import { DriverTypesFromFirebase } from "../types/drivers";
 import { VehicleFromFirebase } from "../types/vehicles";
 import { ShipmentTypesFromFirebase } from "../types/shipment";
+import styles from "../css/table.module.css";
+import styled from "styled-components";
 
 type TableComponentProps = {
   data:
@@ -32,6 +34,13 @@ const TableComponent = ({ data, columns, pagination }: TableComponentProps) => {
       dataSource={data}
       pagination={pagination}
       scroll={{ x: 100 }}
+      className={styles["myTable"]}
+      rowClassName={(record) =>
+        // se realiza una validacion para ver si existe el campo state en types de la tabla para asi poder cambiar el color de la fila dependiendo de su estado
+        "state" in record && record.state === false
+          ? styles["inactiveRow"]
+          : styles["activeRow"]
+      }
     />
   );
 };
