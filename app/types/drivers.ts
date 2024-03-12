@@ -3,7 +3,7 @@ export interface DriverTypes {
   dui: string;
   address: string;
   age: string;
-  licence: string;
+  license: string;
   phone: string;
   email: string;
   imageUrl: string;

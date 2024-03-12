@@ -8,7 +8,6 @@ import { DriverTypesFromFirebase } from "../types/drivers";
 import { VehicleFromFirebase } from "../types/vehicles";
 import { ShipmentTypesFromFirebase } from "../types/shipment";
 import styles from "../css/table.module.css";
-import styled from "styled-components";
 
 type TableComponentProps = {
   data:

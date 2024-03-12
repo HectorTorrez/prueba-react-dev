@@ -1,4 +1,4 @@
-export const driverLicence = [
+export const driverLicense = [
   {
     name: "Motociclista",
     value: "Motociiclista",

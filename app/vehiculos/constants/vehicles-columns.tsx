@@ -46,7 +46,13 @@ export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
     dataIndex: "typeOfVehicle",
   },
   {
-    title: "Activo/Inactivo",
+    title: "Estado del vehículo",
+    dataIndex: "state",
+    key: "state",
+    render: (state) => (state ? "Activo" : "Inactivo"),
+  },
+  {
+    title: "Inactivo / Activo",
     key: "switch",
     dataIndex: "switch",
     render: (_, record) => (
@@ -58,12 +64,6 @@ export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
         doc="vehiculos"
       />
     ),
-  },
-  {
-    title: "Estado del vehículo",
-    dataIndex: "state",
-    key: "state",
-    render: (state) => (state ? "Activo" : "Inactivo"),
   },
   {
     title: "Opciones",

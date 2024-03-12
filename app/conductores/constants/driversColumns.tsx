@@ -35,8 +35,15 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
     key: "address",
     dataIndex: "address",
   },
+
   {
-    title: "Activo/Inactivo",
+    title: "Estado del conductor",
+    dataIndex: "state",
+    key: "state",
+    render: (state) => (state ? "Activo" : "Inactivo"),
+  },
+  {
+    title: "Inactivo / Activo",
     key: "switch",
     dataIndex: "switch",
     render: (_, record) => (
@@ -48,12 +55,6 @@ export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
         doc="conductores"
       />
     ),
-  },
-  {
-    title: "Estado del conductor",
-    dataIndex: "state",
-    key: "state",
-    render: (state) => (state ? "Activo" : "Inactivo"),
   },
   {
     title: "Opciones",

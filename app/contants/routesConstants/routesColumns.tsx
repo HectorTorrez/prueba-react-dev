@@ -10,7 +10,7 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import TableComponent from "../../components/table";
 import { viewColumns } from "./viewRouteColumns";
 import RouteForm from "@/app/components/route-form";
-import Map from "@/app/provider/MapProvider";
+import Map from "@/app/components/Map";
 
 // columnas de la tabla de rutas
 export const columns: TableProps<RouteFromFirebase>["columns"] = [
@@ -34,8 +34,15 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
     key: "destiny",
     dataIndex: "destiny",
   },
+
   {
-    title: "Activo/Inactivo",
+    title: "Estado de Ruta",
+    dataIndex: "state",
+    key: "state",
+    render: (state) => (state ? "Activo" : "Inactivo"),
+  },
+  {
+    title: "Inactivo / Activo",
     key: "switch",
     dataIndex: "switch",
     render: (_, record) => (
@@ -47,12 +54,6 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
         doc="rutas"
       />
     ),
-  },
-  {
-    title: "Estado de Ruta",
-    dataIndex: "state",
-    key: "state",
-    render: (state) => (state ? "Activo" : "Inactivo"),
   },
   {
     title: "Opciones",
@@ -94,7 +95,7 @@ export const columns: TableProps<RouteFromFirebase>["columns"] = [
           />
         </ModalComponent>
         <ModalComponent
-          buttonWidth="100px"
+          buttonWidth="120px"
           buttonType="primary"
           text="Ver en mapa"
           title="Mapa"

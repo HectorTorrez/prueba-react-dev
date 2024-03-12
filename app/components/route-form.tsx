@@ -77,7 +77,7 @@ const RouteForm = ({
       <Form.Item
         initialValue={value?.type ?? ""}
         name="type"
-        label="Tipo de ruta"
+        label="Tipo de viaje"
         rules={[{ required: true }]}
       >
         <Input />

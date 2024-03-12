@@ -5,9 +5,8 @@ import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import UploadImageComponent from "../../components/upload-image";
 import { validateDUI } from "../../helpers/validateDUI";
-import { driverLicence } from "../../contants/drivingLicence";
+import { driverLicense } from "../../contants/drivingLicense";
 import { DriverTypes, DriverTypesFromFirebase } from "../../types/drivers";
-import { set } from "firebase/database";
 
 const layout = {
   labelCol: { span: 8 },
@@ -48,7 +47,7 @@ const DriverForm = ({
         dui: values.dui,
         address: values.address,
         age: values.age,
-        licence: values.licence,
+        license: values.license,
         phone: values.phone,
         email: values.email,
         key: crypto.randomUUID(),
@@ -74,7 +73,7 @@ const DriverForm = ({
         dui: form.getFieldValue("dui"),
         address: form.getFieldValue("address"),
         age: form.getFieldValue("age"),
-        licence: form.getFieldValue("licence"),
+        license: form.getFieldValue("license"),
         phone: form.getFieldValue("phone"),
         email: form.getFieldValue("email"),
       });
@@ -143,13 +142,13 @@ const DriverForm = ({
         <Input type="number" maxLength={2} />
       </Form.Item>
       <Form.Item
-        initialValue={values?.licence ?? null}
-        name="licence"
+        initialValue={values?.license ?? null}
+        name="license"
         label="Licencia"
         rules={[{ required: true }]}
       >
         <Select placeholder="Selecciona una licencia" allowClear>
-          {driverLicence.map((type) => (
+          {driverLicense.map((type) => (
             <Select.Option key={type.value} value={type.value}>
               {type.name}
             </Select.Option>
