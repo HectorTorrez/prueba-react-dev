@@ -1,5 +1,5 @@
 "use client";
-import { Space, TableProps } from "antd";
+import { Space, TableColumnsType } from "antd";
 import SwitchComponent from "../../components/switch";
 import { RouteFromFirebase } from "../../types/routes";
 import { getState } from "../../helpers/getState";
@@ -13,7 +13,7 @@ import RouteForm from "@/app/components/route-form";
 import Map from "@/app/components/Map";
 
 // columnas de la tabla de rutas
-export const columns: TableProps<RouteFromFirebase>["columns"] = [
+export const columnsRoutes: TableColumnsType<RouteFromFirebase> = [
   {
     title: "Tipo de viaje",
     dataIndex: "type",

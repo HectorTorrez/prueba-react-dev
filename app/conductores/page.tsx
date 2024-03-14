@@ -40,7 +40,7 @@ export default async function DriversPage() {
         <TableComponent
           pagination={undefined}
           data={driversData}
-          columns={driverColumns as []}
+          columns={driverColumns}
         />
       </SectionLayout>
     </section>

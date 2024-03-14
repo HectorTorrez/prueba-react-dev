@@ -40,7 +40,7 @@ export default async function page() {
         <TableComponent
           pagination={undefined}
           data={vehiclesData}
-          columns={vehicleColumns as []}
+          columns={vehicleColumns}
         />
       </SectionLayout>
     </section>

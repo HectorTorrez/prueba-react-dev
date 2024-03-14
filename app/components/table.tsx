@@ -1,32 +1,32 @@
 "use client";
 import React from "react";
 import { Table } from "antd";
-
 import { RouteFromFirebase } from "../types/routes";
-import { TableProps } from "antd/lib";
 import { DriverTypesFromFirebase } from "../types/drivers";
 import { VehicleFromFirebase } from "../types/vehicles";
 import { ShipmentTypesFromFirebase } from "../types/shipment";
 import styles from "../css/table.module.css";
+import { ColumnsType } from "antd/es/table";
 
-type TableComponentProps = {
-  data:
-    | RouteFromFirebase[]
-    | DriverTypesFromFirebase[]
-    | VehicleFromFirebase[]
-    | ShipmentTypesFromFirebase[];
-  columns: TableProps<
-    | RouteFromFirebase
-    | DriverTypesFromFirebase
-    | VehicleFromFirebase
-    | ShipmentTypesFromFirebase
-  >["columns"];
+type CombinedType =
+  | RouteFromFirebase
+  | DriverTypesFromFirebase
+  | VehicleFromFirebase
+  | ShipmentTypesFromFirebase;
+
+type TableComponentProps<T extends CombinedType> = {
+  data: T[];
+  columns: ColumnsType<T>;
   pagination: false | object | undefined;
 };
 
 // componente de tabla reutilizable
 
-const TableComponent = ({ data, columns, pagination }: TableComponentProps) => {
+const TableComponent = <T extends CombinedType>({
+  data,
+  columns,
+  pagination,
+}: TableComponentProps<T>) => {
   return (
     <Table
       columns={columns}

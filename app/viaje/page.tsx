@@ -40,7 +40,7 @@ export default async function ShipmentPage() {
         <TableComponent
           pagination={undefined}
           data={shipments}
-          columns={shipmentColumns as []}
+          columns={shipmentColumns}
         />
       </SectionLayout>
     </section>

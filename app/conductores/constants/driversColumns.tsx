@@ -1,5 +1,5 @@
 "use client";
-import { Space } from "antd";
+import { Space, TableColumnsType } from "antd";
 import SwitchComponent from "../../components/switch";
 import ModalComponent from "../../components/modal";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ import { viewDriversColumns } from "./viewDriversColumns";
 import DriverForm from "../components/driver-form";
 
 // columnas de la tabla de conductores
-export const driverColumns: TableProps<DriverTypesFromFirebase>["columns"] = [
+export const driverColumns: TableColumnsType<DriverTypesFromFirebase> = [
   {
     title: "Nombre",
     dataIndex: "name",

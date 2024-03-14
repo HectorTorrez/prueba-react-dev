@@ -1,12 +1,11 @@
 "use client";
-import { Space } from "antd";
+import { Space, TableColumnsType } from "antd";
 import SwitchComponent from "../../components/switch";
 import ModalComponent from "../../components/modal";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
 
-import { TableProps } from "antd/lib";
 import { getState } from "../../helpers/getState";
 import { VehicleFromFirebase } from "@/app/types/vehicles";
 import { viewVehiclesColumns } from "./view-vehicles-columns";
@@ -14,7 +13,7 @@ import TableComponent from "@/app/components/table";
 import VehicleForm from "../components/vehicle-form";
 
 // columnas de la tabla de vehiculos
-export const vehicleColumns: TableProps<VehicleFromFirebase>["columns"] = [
+export const vehicleColumns: TableColumnsType<VehicleFromFirebase> = [
   {
     title: "Marca",
     dataIndex: "brand",
