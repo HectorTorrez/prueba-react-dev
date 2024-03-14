@@ -26,34 +26,49 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
     key: "route",
   },
   {
-    title: "Fecha y hora de recogida",
-    dataIndex: ["dateCollection", "timeCollection"],
-    key: "dateTimeCollection",
+    title: "Fecha de recogida",
+    dataIndex: "dateCollection",
+    key: "dateCollection",
+    render: (_, record) => {
+      // convierto la fecha y hora en un string para poder mostrarlo en la tabla
+
+      // const newHour = hour(record.timeCollection);
+      const newDate = date(record.dateCollection);
+      return <span>{newDate}</span>;
+    },
+  },
+  {
+    title: "Hora recogida",
+    dataIndex: "timeCollection",
+    key: "timeCollection",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
 
       const newHour = hour(record.timeCollection);
-      const newDate = date(record.dateCollection);
-      return (
-        <span>
-          {newDate}, {newHour}
-        </span>
-      );
+      // const newDate = date(record.dateCollection);
+      return <span>{newHour}</span>;
     },
   },
   {
-    title: "Fecha y hora de llegada",
-    dataIndex: ["dateArrival", "timeArrival"],
-    key: "dateTimeArrival",
+    title: "Fecha de llegada",
+    dataIndex: "dateArrival",
+    key: "dateArrival",
+    render: (_, record) => {
+      // convierto la fecha y hora en un string para poder mostrarlo en la tabla
+      // const newHour = hour(record.timeArrival);
+      const newTime = date(record.dateArrival);
+      return <span>{newTime}</span>;
+    },
+  },
+  {
+    title: "Hora de llegada",
+    dataIndex: "timeArrival",
+    key: "timeArrival",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
       const newHour = hour(record.timeArrival);
-      const newTime = date(record.dateArrival);
-      return (
-        <span>
-          {newTime}, {newHour}
-        </span>
-      );
+      // const newTime = date(record.dateArrival);
+      return <span>{newHour}</span>;
     },
   },
   {
