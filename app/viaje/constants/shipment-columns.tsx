@@ -27,7 +27,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
   },
   {
     title: "Fecha y hora de recogida",
-    dataIndex: "dateTimeCollection",
+    dataIndex: ["dateCollection", "timeCollection"],
     key: "dateTimeCollection",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
@@ -43,7 +43,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
   },
   {
     title: "Fecha y hora de llegada",
-    dataIndex: "dateTimeArrival",
+    dataIndex: ["dateArrival", "timeArrival"],
     key: "dateTimeArrival",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
