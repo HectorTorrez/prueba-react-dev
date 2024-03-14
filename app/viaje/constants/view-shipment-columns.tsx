@@ -1,7 +1,5 @@
 "use client";
 
-import { TableProps } from "antd/lib";
-
 import { ShipmentTypesFromFirebase } from "@/app/types/shipment";
 
 import { date, hour } from "@/app/helpers/getDate";
