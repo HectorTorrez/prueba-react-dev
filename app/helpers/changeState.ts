@@ -15,10 +15,10 @@ export async function changeState(
     await updateDoc(ruta, {
       state: state,
     });
-    message.success("Ruta actualizada");
+    message.success("Estado actualizado");
     location.reload();
   } catch (error) {
     console.error("Error updating document: ", error);
-    message.error("Error al actualizar la ruta");
+    message.error("Error a actualizar el estado");
   }
 }

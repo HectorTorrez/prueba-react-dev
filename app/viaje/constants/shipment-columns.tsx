@@ -12,7 +12,8 @@ import ShipmentForm from "../components/shipment-form";
 import { date, hour } from "@/app/helpers/getDate";
 import TableComponent from "@/app/components/table";
 import { viewShipmentColumns } from "./view-shipment-columns";
-import useGetRoutes from "@/app/hooks/useGetActiveRoutes";
+import SwitchComponent from "@/app/components/switch";
+import { getState } from "@/app/helpers/getState";
 
 // columnas de la tabla de viajes
 export const shipmentColumns: TableProps<ShipmentTypesFromFirebase>["columns"] =
@@ -68,26 +69,26 @@ export const shipmentColumns: TableProps<ShipmentTypesFromFirebase>["columns"] =
       key: "vehicle",
       dataIndex: "vehicle",
     },
-    // {
-    //   title: "Activo/Inactivo",
-    //   key: "switch",
-    //   dataIndex: "switch",
-    //   render: (_, record) => (
-    //     <SwitchComponent
-    //       key={record.idDoc}
-    //       record={record.state}
-    //       onChange={getState}
-    //       idDoc={record.idDoc}
-    //       doc="vehiculos"
-    //     />
-    //   ),
-    // },
-    // {
-    //   title: "Estado del vehículo",
-    //   dataIndex: "state",
-    //   key: "state",
-    //   render: (state) => (state ? "Activo" : "Inactivo"),
-    // },
+    {
+      title: "Inactivo / Activo",
+      key: "switch",
+      dataIndex: "switch",
+      render: (_, record) => (
+        <SwitchComponent
+          key={record.idDoc}
+          record={record.state}
+          onChange={getState}
+          idDoc={record.idDoc}
+          doc="viajes"
+        />
+      ),
+    },
+    {
+      title: "Estado del viaje",
+      dataIndex: "state",
+      key: "state",
+      render: (state) => (state ? "Activo" : "Inactivo"),
+    },
     {
       title: "Opciones",
       key: "opciones",

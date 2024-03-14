@@ -64,6 +64,7 @@ const ShipmentForm = ({
         driver: values.driver,
         vehicle: values.vehicle,
         route: values.route,
+        state: true,
         key: crypto.randomUUID(),
         createdAt: new Date().toISOString(),
       });

@@ -10,6 +10,7 @@ export interface ShipmentTypes {
   id: string;
   key: string;
   createdAt: string;
+  state: boolean;
 }
 
 export interface ShipmentTypesFromFirebase extends ShipmentTypes {
