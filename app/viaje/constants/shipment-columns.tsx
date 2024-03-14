@@ -11,7 +11,7 @@ import { date, hour } from "@/app/helpers/getDate";
 import TableComponent from "@/app/components/table";
 import { viewShipmentColumns } from "./view-shipment-columns";
 import SwitchComponent from "@/app/components/switch";
-import { getState } from "@/app/helpers/getState";
+import { changeState } from "@/app/helpers/changeState";
 
 // columnas de la tabla de viajes
 export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
@@ -81,7 +81,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
       <SwitchComponent
         key={record.idDoc}
         record={record.state}
-        onChange={getState}
+        onChange={changeState}
         idDoc={record.idDoc}
         doc="viajes"
       />
@@ -103,7 +103,6 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
             title="Editar viaje"
           >
             <ShipmentForm isEdit={true} values={record} />
-            {/* <ShipmentFormServer record={record} /> */}
           </ModalComponent>
 
           {/* boton para eliminar */}
@@ -130,7 +129,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
           >
             <TableComponent
               pagination={false}
-              columns={viewShipmentColumns as []}
+              columns={viewShipmentColumns}
               data={[record]}
             />
           </ModalComponent>

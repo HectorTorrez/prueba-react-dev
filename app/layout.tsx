@@ -28,7 +28,6 @@ export default function RootLayout({
         <AntdRegistry>
           <ConfigProvider locale={esES}>
             <StyledComponentsRegistry>
-              {/* <Navbar /> */}
               <NavbarAnt />
               {children}
             </StyledComponentsRegistry>

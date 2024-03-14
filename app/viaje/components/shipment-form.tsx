@@ -159,14 +159,6 @@ const ShipmentForm = ({
       >
         <DatePicker />
       </Form.Item>
-      {/* <Form.Item
-        name="dateArrival"
-        label="Fecha de llegada"
-        rules={[{ required: true }]}
-        initialValue={values?.dateTimeArrival ?? ""}
-      >
-        <DatePicker showTime format="DD/MM/YY" />
-      </Form.Item> */}
       <Form.Item
         name="timeArrival"
         label="Hora de llegada"

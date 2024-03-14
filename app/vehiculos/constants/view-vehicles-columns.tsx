@@ -4,9 +4,10 @@ import { TableProps } from "antd/lib";
 
 import { VehicleFromFirebase } from "@/app/types/vehicles";
 import ImageComponent from "@/app/components/image";
+import { ColumnsType } from "antd/es/table";
 
 // columnas de la tabla de vehiculos
-export const viewVehiclesColumns: TableProps<VehicleFromFirebase>["columns"] = [
+export const viewVehiclesColumns: ColumnsType<VehicleFromFirebase> = [
   {
     title: "Fotografía del vehículo",
     dataIndex: "imageUrl",

@@ -2,7 +2,6 @@
 import { Space, TableColumnsType } from "antd";
 import SwitchComponent from "../../components/switch";
 import { RouteFromFirebase } from "../../types/routes";
-import { getState } from "../../helpers/getState";
 import ModalComponent from "../../components/modal";
 import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
@@ -11,6 +10,7 @@ import TableComponent from "../../components/table";
 import { viewColumns } from "./viewRouteColumns";
 import RouteForm from "@/app/components/route-form";
 import Map from "@/app/components/Map";
+import { changeState } from "@/app/helpers/changeState";
 
 // columnas de la tabla de rutas
 export const columnsRoutes: TableColumnsType<RouteFromFirebase> = [
@@ -49,7 +49,7 @@ export const columnsRoutes: TableColumnsType<RouteFromFirebase> = [
       <SwitchComponent
         key={record.idDoc}
         record={record.state}
-        onChange={getState}
+        onChange={changeState}
         idDoc={record.idDoc}
         doc="rutas"
       />

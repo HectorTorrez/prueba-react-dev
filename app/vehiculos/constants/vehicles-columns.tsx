@@ -6,11 +6,11 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
 
-import { getState } from "../../helpers/getState";
 import { VehicleFromFirebase } from "@/app/types/vehicles";
 import { viewVehiclesColumns } from "./view-vehicles-columns";
 import TableComponent from "@/app/components/table";
 import VehicleForm from "../components/vehicle-form";
+import { changeState } from "@/app/helpers/changeState";
 
 // columnas de la tabla de vehiculos
 export const vehicleColumns: TableColumnsType<VehicleFromFirebase> = [
@@ -58,7 +58,7 @@ export const vehicleColumns: TableColumnsType<VehicleFromFirebase> = [
       <SwitchComponent
         key={record.idDoc}
         record={record.state}
-        onChange={getState}
+        onChange={changeState}
         idDoc={record.idDoc}
         doc="vehiculos"
       />
@@ -103,7 +103,7 @@ export const vehicleColumns: TableColumnsType<VehicleFromFirebase> = [
         >
           <TableComponent
             pagination={false}
-            columns={viewVehiclesColumns as any}
+            columns={viewVehiclesColumns}
             data={[record]}
           />
         </ModalComponent>

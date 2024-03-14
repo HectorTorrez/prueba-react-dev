@@ -7,10 +7,10 @@ import DeleteButton from "../../components/delete-button";
 import { DriverTypesFromFirebase } from "../../types/drivers";
 import { deleteDocument } from "../../helpers/delete";
 
-import { getState } from "../../helpers/getState";
 import TableComponent from "@/app/components/table";
 import { viewDriversColumns } from "./viewDriversColumns";
 import DriverForm from "../components/driver-form";
+import { changeState } from "@/app/helpers/changeState";
 
 // columnas de la tabla de conductores
 export const driverColumns: TableColumnsType<DriverTypesFromFirebase> = [
@@ -49,7 +49,7 @@ export const driverColumns: TableColumnsType<DriverTypesFromFirebase> = [
       <SwitchComponent
         key={record.idDoc}
         record={record.state}
-        onChange={getState}
+        onChange={changeState}
         idDoc={record.idDoc}
         doc="conductores"
       />
