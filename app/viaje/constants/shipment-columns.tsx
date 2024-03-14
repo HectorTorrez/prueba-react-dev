@@ -35,7 +35,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
       const newHour = hour(record.timeCollection);
       const newDate = date(record.dateCollection);
       return (
-        <span suppressHydrationWarning={true}>
+        <span>
           {newDate}, {newHour}
         </span>
       );
@@ -50,7 +50,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
       const newHour = hour(record.timeArrival);
       const newTime = date(record.dateArrival);
       return (
-        <span suppressHydrationWarning={true}>
+        <span>
           {newTime}, {newHour}
         </span>
       );
