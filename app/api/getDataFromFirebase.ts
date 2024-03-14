@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export const getData = async () => {
   const q = query(collection(db, "rutas"), orderBy("createdAt", "desc"));
-  // const querySnapshot = await getDocs(collection(db, "rutas"));
+
   const querySnapshot = await getDocs(q);
   const data: RouteFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
@@ -23,7 +23,7 @@ export const getData = async () => {
 // esta funcion trae todas las rutas activas
 export const getActiveRoutes = async () => {
   const q = query(collection(db, "rutas"), where("state", "==", true));
-  // const querySnapshot = await getDocs(collection(db, "rutas"));
+
   const querySnapshot = await getDocs(q);
   const data: RouteFromFirebase[] = [];
   querySnapshot.forEach((doc) => {

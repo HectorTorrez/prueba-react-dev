@@ -4,7 +4,7 @@ import { VehicleFromFirebase } from "../types/vehicles";
 
 export const getVehicles = async () => {
   const q = query(collection(db, "vehiculos"), orderBy("createdAt", "desc"));
-  // const querySnapshot = await getDocs(collection(db, "vehiculos"));
+
   const querySnapshot = await getDocs(q);
   const data: VehicleFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
@@ -20,7 +20,6 @@ export const getVehicles = async () => {
 // esta funcion trae todos los vehiculos activos
 export const getActiveVehicles = async () => {
   const q = query(collection(db, "vehiculos"), where("state", "==", true));
-  // const querySnapshot = await getDocs(collection(db, "vehiculos"));
   const querySnapshot = await getDocs(q);
   const data: VehicleFromFirebase[] = [];
   querySnapshot.forEach((doc) => {
