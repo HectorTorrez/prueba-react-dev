@@ -7,7 +7,6 @@ import DeleteButton from "../../components/delete-button";
 import { DriverTypesFromFirebase } from "../../types/drivers";
 import { deleteDocument } from "../../helpers/delete";
 
-import { TableProps } from "antd/lib";
 import { getState } from "../../helpers/getState";
 import TableComponent from "@/app/components/table";
 import { viewDriversColumns } from "./viewDriversColumns";

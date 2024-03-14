@@ -5,8 +5,6 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
 
-import { TableProps } from "antd/lib";
-
 import { ShipmentTypesFromFirebase } from "@/app/types/shipment";
 import ShipmentForm from "../components/shipment-form";
 import { date, hour } from "@/app/helpers/getDate";
