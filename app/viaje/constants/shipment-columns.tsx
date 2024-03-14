@@ -69,6 +69,13 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
     dataIndex: "vehicle",
   },
   {
+    title: "Estado del viaje",
+    dataIndex: "state",
+    key: "state",
+    render: (state) => (state ? "Activo" : "Inactivo"),
+  },
+
+  {
     title: "Inactivo / Activo",
     key: "switch",
     dataIndex: "switch",
@@ -82,12 +89,7 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
       />
     ),
   },
-  {
-    title: "Estado del viaje",
-    dataIndex: "state",
-    key: "state",
-    render: (state) => (state ? "Activo" : "Inactivo"),
-  },
+
   {
     title: "Opciones",
     key: "opciones",
