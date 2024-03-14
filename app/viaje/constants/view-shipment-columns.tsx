@@ -59,24 +59,11 @@ export const viewShipmentColumns: TableProps<ShipmentTypesFromFirebase>["columns
       key: "vehicle",
       dataIndex: "vehicle",
     },
-    // {
-    //   title: "Activo/Inactivo",
-    //   key: "switch",
-    //   dataIndex: "switch",
-    //   render: (_, record) => (
-    //     <SwitchComponent
-    //       key={record.idDoc}
-    //       record={record.state}
-    //       onChange={getState}
-    //       idDoc={record.idDoc}
-    //       doc="vehiculos"
-    //     />
-    //   ),
-    // },
-    // {
-    //   title: "Estado del vehículo",
-    //   dataIndex: "state",
-    //   key: "state",
-    //   render: (state) => (state ? "Activo" : "Inactivo"),
-    // },
+
+    {
+      title: "Estado del viaje",
+      dataIndex: "state",
+      key: "state",
+      render: (state) => (state ? "Activo" : "Inactivo"),
+    },
   ];
