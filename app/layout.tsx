@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import StyledComponentsRegistry from "./lib/registry";
-import Navbar from "./components/nav";
 const inter = Inter({ subsets: ["latin"] });
 import esES from "antd/locale/es_ES";
 import { ConfigProvider } from "antd";
