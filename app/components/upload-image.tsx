@@ -80,13 +80,7 @@ export default function UploadImageComponent({
       style={{ height: "100%" }}
     >
       {imageUrl ? (
-        <Image
-          src={imageUrl ?? avatar}
-          alt="avatar"
-          // style={{ width: "100%" }}
-          width={200}
-          height={200}
-        />
+        <Image src={imageUrl ?? avatar} alt="avatar" width={200} height={200} />
       ) : (
         uploadButton
       )}

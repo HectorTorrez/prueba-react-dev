@@ -1,5 +1,6 @@
 import React from "react";
 
+// este componente es un layout de estilos para las diferentes paginas
 export default function SectionLayout({
   children,
 }: {
