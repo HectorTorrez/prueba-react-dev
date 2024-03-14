@@ -26,49 +26,34 @@ export const shipmentColumns: TableColumnsType<ShipmentTypesFromFirebase> = [
     key: "route",
   },
   {
-    title: "Fecha de recogida",
-    dataIndex: "dateCollection",
-    key: "dateCollection",
-    render: (_, record) => {
-      // convierto la fecha y hora en un string para poder mostrarlo en la tabla
-
-      // const newHour = hour(record.timeCollection);
-      const newDate = date(record.dateCollection);
-      return <span>{newDate}</span>;
-    },
-  },
-  {
-    title: "Hora recogida",
-    dataIndex: "timeCollection",
-    key: "timeCollection",
+    title: "Fecha y hora de recogida",
+    dataIndex: "dateTimeCollection",
+    key: "dateTimeCollection",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
 
       const newHour = hour(record.timeCollection);
-      // const newDate = date(record.dateCollection);
-      return <span>{newHour}</span>;
+      const newDate = date(record.dateCollection);
+      return (
+        <span suppressHydrationWarning={true}>
+          {newDate}, {newHour}
+        </span>
+      );
     },
   },
   {
-    title: "Fecha de llegada",
-    dataIndex: "dateArrival",
-    key: "dateArrival",
-    render: (_, record) => {
-      // convierto la fecha y hora en un string para poder mostrarlo en la tabla
-      // const newHour = hour(record.timeArrival);
-      const newTime = date(record.dateArrival);
-      return <span>{newTime}</span>;
-    },
-  },
-  {
-    title: "Hora de llegada",
-    dataIndex: "timeArrival",
-    key: "timeArrival",
+    title: "Fecha y hora de llegada",
+    dataIndex: "dateTimeArrival",
+    key: "dateTimeArrival",
     render: (_, record) => {
       // convierto la fecha y hora en un string para poder mostrarlo en la tabla
       const newHour = hour(record.timeArrival);
-      // const newTime = date(record.dateArrival);
-      return <span>{newHour}</span>;
+      const newTime = date(record.dateArrival);
+      return (
+        <span suppressHydrationWarning={true}>
+          {newTime}, {newHour}
+        </span>
+      );
     },
   },
   {
