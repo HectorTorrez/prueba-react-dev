@@ -42,6 +42,7 @@ const ShipmentForm = ({
 }) => {
   const [form] = Form.useForm();
 
+  // hooks para obtener las rutas, conductores y vehiculos activos
   const routes = useGetRoutes();
   const drivers = useGetActiveDriver();
   const vehicles = useGetActiveVehicle();

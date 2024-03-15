@@ -8,7 +8,7 @@ import { DriverTypesFromFirebase } from "../../types/drivers";
 import { deleteDocument } from "../../helpers/delete";
 
 import TableComponent from "@/app/components/table";
-import { viewDriversColumns } from "./viewDriversColumns";
+import { viewDriversColumns } from "./view-drivers-columns";
 import DriverForm from "../components/driver-form";
 import { changeState } from "@/app/helpers/changeState";
 
@@ -92,7 +92,7 @@ export const driverColumns: TableColumnsType<DriverTypesFromFirebase> = [
         >
           <TableComponent
             pagination={false}
-            columns={viewDriversColumns as []}
+            columns={viewDriversColumns}
             data={[record]}
           />
         </ModalComponent>

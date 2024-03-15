@@ -1,9 +1,10 @@
 "use client";
 import { TableProps } from "antd";
 import { DataType } from "../../types/routes";
+import { ColumnsType } from "antd/es/table";
 
 // columnas de la tabla de conductores al hacer click en ver mas
-export const viewColumns: TableProps<DataType>["columns"] = [
+export const viewColumns: ColumnsType<DataType> = [
   {
     title: "Tipo de viaje",
     dataIndex: "type",

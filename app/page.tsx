@@ -2,7 +2,7 @@ import TableComponent from "./components/table";
 import ModalComponent from "./components/modal";
 import RouteForm from "./components/route-form";
 import { getData } from "./api/getDataFromFirebase";
-import { columnsRoutes } from "./contants/routesConstants/routesColumns";
+import { columnsRoutes } from "./contants/routesConstants/routes-columns";
 import SectionLayout from "./components/section-layout";
 import { BUTTONS_ADD_WIDTH } from "./contants/styles";
 import Title from "antd/es/typography/Title";

@@ -7,7 +7,7 @@ import DeleteButton from "../../components/delete-button";
 import { deleteDocument } from "../../helpers/delete";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import TableComponent from "../../components/table";
-import { viewColumns } from "./viewRouteColumns";
+import { viewColumns } from "./view-route-columns";
 import RouteForm from "@/app/components/route-form";
 import Map from "@/app/components/Map";
 import { changeState } from "@/app/helpers/changeState";
@@ -90,7 +90,7 @@ export const columnsRoutes: TableColumnsType<RouteFromFirebase> = [
         >
           <TableComponent
             pagination={false}
-            columns={viewColumns as []}
+            columns={viewColumns}
             data={[record]}
           />
         </ModalComponent>
